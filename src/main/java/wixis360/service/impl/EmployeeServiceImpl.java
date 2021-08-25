@@ -2,7 +2,6 @@ package wixis360.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import wixis360.dao.EmployeeDAO;
 import wixis360.dao.impl.EmployeeDaoImpl;
 import wixis360.dto.EmployeeDTO;
 import wixis360.model.Employee;
@@ -22,25 +21,28 @@ public class EmployeeServiceImpl implements EmployeeService {
     EmployeeDaoImpl dao;
 
     @Override
-    public void saveEmployee(EmployeeDTO dto) {
+    public int saveEmployee(EmployeeDTO dto) {
         dao.saveEmployee(new Employee(dto.getId(),dto.getName(),dto.getContact(),dto.getAddress()));
 
+        return 1;
     }
 
 
     @Override
-    public EmployeeDTO searchEmployee(String id) {
-        return null;
-    }
-
-    @Override
-    public void updateEmployee(EmployeeDTO dto) {
+    public void searchEmployee(String id) {
 
     }
 
     @Override
-    public void deleteEmployee(String id) {
+    public int updateEmployee(EmployeeDTO dto) {
+        dao.updateEmployee(new Employee(dto.getId(),dto.getName(),dto.getContact(),dto.getAddress()));
 
+        return 1;
+    }
+
+    @Override
+    public int deleteEmployee(String id) {
+        return dao.deleteEmployee(id);
     }
 
     @Override

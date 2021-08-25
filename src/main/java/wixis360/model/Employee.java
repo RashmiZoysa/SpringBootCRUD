@@ -1,7 +1,5 @@
 package wixis360.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 /**
  * @author : Rashmi De Zoysa

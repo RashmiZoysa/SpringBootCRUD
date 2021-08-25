@@ -9,13 +9,13 @@ import java.util.ArrayList;
  * @Date :23-Aug-21
  **/
 public interface EmployeeService {
-        void saveEmployee(EmployeeDTO dto);
+        int saveEmployee(EmployeeDTO dto);
 
-        EmployeeDTO searchEmployee(String id);
+        void searchEmployee(String id);
 
-        void updateEmployee(EmployeeDTO dto);
+        int updateEmployee(EmployeeDTO dto);
 
-        void deleteEmployee(String id);
+        int deleteEmployee(String id);
 
         ArrayList<EmployeeDTO> getAllEmployees();
 

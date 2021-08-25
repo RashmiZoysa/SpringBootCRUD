@@ -7,4 +7,6 @@ package wixis360.utills;
 
 
 public class StandardResponse {
+         public StandardResponse(String code, String error, String message) {
+    }
 }
