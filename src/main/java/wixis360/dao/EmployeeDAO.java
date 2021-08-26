@@ -1,11 +1,9 @@
 package wixis360.dao;
 
-import wixis360.dto.EmployeeDTO;
 import wixis360.model.Employee;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : Rashmi De Zoysa
@@ -14,12 +12,12 @@ import java.util.ArrayList;
 public interface EmployeeDAO {
     int saveEmployee(Employee employee);
 
-    void searchEmployee(String id) ;
+    Employee searchEmployee(String id) throws SQLException;
 
     int updateEmployee(Employee employee);
 
     int deleteEmployee(String id);
 
-    ArrayList<EmployeeDTO> getAllEmployees();
+    List<Employee> getAllEmployees();
 
 }

@@ -7,7 +7,10 @@ import wixis360.dto.EmployeeDTO;
 import wixis360.model.Employee;
 import wixis360.service.EmployeeService;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : Rashmi De Zoysa
@@ -29,9 +32,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public void searchEmployee(String id) {
+    public EmployeeDTO searchEmployee(String id) throws SQLException {
 
-    }
+            Employee employee = dao.searchEmployee(id);
+            return new EmployeeDTO(employee.getId(),employee.getName(),employee.getContact(),employee.getAddress());
+
+        }
+
 
     @Override
     public int updateEmployee(EmployeeDTO dto) {
@@ -46,7 +53,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public ArrayList<EmployeeDTO> getAllEmployees() {
-        return null;
+    public List<EmployeeDTO> getAllEmployees() {
+        List<Employee> cList =dao.getAllEmployees();
+        List<EmployeeDTO>List =new ArrayList();
+        for (Employee employee: cList){
+            List.add(new EmployeeDTO(employee.getId(),employee.getName(),employee.getContact(),employee.getAddress()));
+        }
+        return List;
     }
-}
+    }
+

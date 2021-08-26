@@ -2,7 +2,8 @@ package wixis360.service;
 
 import wixis360.dto.EmployeeDTO;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @author : Rashmi De Zoysa
@@ -11,13 +12,13 @@ import java.util.ArrayList;
 public interface EmployeeService {
         int saveEmployee(EmployeeDTO dto);
 
-        void searchEmployee(String id);
+        EmployeeDTO searchEmployee(String id) throws SQLException;
 
         int updateEmployee(EmployeeDTO dto);
 
         int deleteEmployee(String id);
 
-        ArrayList<EmployeeDTO> getAllEmployees();
+        List<EmployeeDTO> getAllEmployees();
 
     }
 
