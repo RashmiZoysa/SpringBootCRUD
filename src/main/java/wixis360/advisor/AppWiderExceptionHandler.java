@@ -2,12 +2,15 @@ package wixis360.advisor;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import wixis360.exception.NotFoundException;
 import wixis360.exception.ValidateException;
 import wixis360.utills.StandardResponse;
 
-
+@CrossOrigin
+@RestControllerAdvice
 public class AppWiderExceptionHandler {
 
     @ExceptionHandler(Exception.class)
