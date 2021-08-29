@@ -62,19 +62,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-<!--		&lt;!&ndash;Use to  allow package executable jar or war archives&ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>org.postgresql</groupId>-->
-<!--			<artifactId>postgresql</artifactId>-->
-<!--			<scope>runtime</scope>-->
-<!--		</dependency>-->
-
-<!--		&lt;!&ndash;Use to reduce boilerplate codes&ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>org.projectlombok</groupId>-->
-<!--			<artifactId>lombok</artifactId>-->
-<!--			<optional>true</optional>-->
-<!--		</dependency>-->
 
 		<!--Use to test spring boot application with libraries-->
 		<dependency>

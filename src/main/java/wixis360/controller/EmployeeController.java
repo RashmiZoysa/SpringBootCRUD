@@ -1,16 +1,12 @@
 package wixis360.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import org.springframework.web.servlet.ModelAndView;
 import wixis360.dto.EmployeeDTO;
 
 
 import wixis360.service.EmployeeService;
-
 import java.sql.SQLException;
 import java.util.List;
 
@@ -19,15 +15,14 @@ import java.util.List;
  * @Date :23-Aug-21
  **/
 
-@Controller
-//@RestController
+//@Controller
+@RestController
 @RequestMapping("/api")
-//@CrossOrigin
+@CrossOrigin
 public class EmployeeController {
 
     @Autowired
     EmployeeService employeeService;
-
 
     @GetMapping("/employee")
     @ResponseBody
@@ -37,9 +32,9 @@ public class EmployeeController {
 
     }
 
-
     @PostMapping("/save")
     @ResponseBody
+//    @Valid
     public int saveEmployee(@RequestBody EmployeeDTO employee) {
 
         return employeeService.saveEmployee(employee);
@@ -50,6 +45,7 @@ public class EmployeeController {
     public EmployeeDTO searchEmployee(@PathVariable("id") String id) throws SQLException {
 
         return employeeService.searchEmployee(id);
+
     }
 
     @PutMapping("/update")

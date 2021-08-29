@@ -1,6 +1,10 @@
 package wixis360.model;
 
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * @author : Rashmi De Zoysa
  * @Date :24-Aug-21
